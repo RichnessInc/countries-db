@@ -24,37 +24,37 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `richness_continents`
+-- Table structure for table `richness_browsers`
 --
 
-CREATE TABLE `richness_continents` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `richness_browsers` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `richness_continents`
+-- Dumping data for table `richness_browsers`
 --
 
-INSERT INTO `richness_continents` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'North America', NULL, NULL),
-(2, 'Asia', NULL, NULL),
-(3, 'Africa', NULL, NULL),
-(4, 'Europe', NULL, NULL),
-(5, 'South America', NULL, NULL),
-(6, 'Oceania', NULL, NULL),
-(7, 'Antarctica', NULL, NULL);
+INSERT INTO `richness_browsers` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'google chrome', NULL, NULL),
+(2, 'firefox', NULL, NULL),
+(3, 'safari', NULL, NULL),
+(4, 'opera', NULL, NULL),
+(5, 'Edge', NULL, NULL),
+(6, 'intermet explorer', NULL, NULL),
+(7, 'Unknow', NULL, NULL);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `richness_continents`
+-- Indexes for table `richness_browsers`
 --
-ALTER TABLE `richness_continents`
+ALTER TABLE `richness_browsers`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -62,10 +62,10 @@ ALTER TABLE `richness_continents`
 --
 
 --
--- AUTO_INCREMENT for table `richness_continents`
+-- AUTO_INCREMENT for table `richness_browsers`
 --
-ALTER TABLE `richness_continents`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE `richness_browsers`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

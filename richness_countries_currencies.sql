@@ -1,20 +1,42 @@
-/**
- * 'richness_countries_currencies' Table
- * @author Sagun Khosla <sagunxp@gmail.com>
- */
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Feb 11, 2022 at 11:02 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.4
 
-DROP TABLE IF EXISTS `richness_countries_currencies`;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `test`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `richness_countries_currencies`
+--
+
 CREATE TABLE `richness_countries_currencies` (
-	`country_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-	`currency_id`  int(11) unsigned NOT NULL,
-	PRIMARY KEY (`country_id`, `currency_id`),
-	KEY `richness_countries_currencies_country_id_foreign` (`country_id`),
-        KEY `richness_countries_currencies_currency_id_foreign` (`currency_id`),
-	CONSTRAINT `richness_countries_currencies_country_id_foreign` FOREIGN KEY (`country_id`) REFERENCES `richness_countries` (`id`),
-	CONSTRAINT `richness_countries_currencies_currency_id_foreign` FOREIGN KEY (`currency_id`) REFERENCES `richness_currencies` (`id`)
+  `country_id` int(10) UNSIGNED NOT NULL,
+  `currency_id` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `richness_countries_currencies` (`country_id`, `currency_id`) VALUES 
+--
+-- Dumping data for table `richness_countries_currencies`
+--
+
+INSERT INTO `richness_countries_currencies` (`country_id`, `currency_id`) VALUES
 (1, 1),
 (2, 2),
 (3, 3),
@@ -106,14 +128,14 @@ INSERT INTO `richness_countries_currencies` (`country_id`, `currency_id`) VALUES
 (93, 11),
 (94, 64),
 (95, 65),
-(96, 66),
 (96, 10),
+(96, 66),
 (97, 67),
 (98, 68),
 (99, 55),
 (100, 28),
-(101, 55),
 (101, 10),
+(101, 55),
 (102, 5),
 (103, 69),
 (104, 70),
@@ -167,8 +189,8 @@ INSERT INTO `richness_countries_currencies` (`country_id`, `currency_id`) VALUES
 (151, 98),
 (152, 99),
 (153, 100),
-(154, 101),
 (154, 88),
+(154, 101),
 (155, 102),
 (156, 14),
 (157, 11),
@@ -182,8 +204,8 @@ INSERT INTO `richness_countries_currencies` (`country_id`, `currency_id`) VALUES
 (165, 34),
 (166, 107),
 (167, 108),
-(168, 109),
 (168, 10),
+(168, 109),
 (169, 34),
 (170, 110),
 (171, 111),
@@ -252,3 +274,41 @@ INSERT INTO `richness_countries_currencies` (`country_id`, `currency_id`) VALUES
 (236, 150),
 (237, 88),
 (238, 151);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `richness_countries_currencies`
+--
+ALTER TABLE `richness_countries_currencies`
+  ADD PRIMARY KEY (`country_id`,`currency_id`),
+  ADD KEY `richness_countries_currencies_country_id_foreign` (`country_id`),
+  ADD KEY `richness_countries_currencies_currency_id_foreign` (`currency_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `richness_countries_currencies`
+--
+ALTER TABLE `richness_countries_currencies`
+  MODIFY `country_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=239;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `richness_countries_currencies`
+--
+ALTER TABLE `richness_countries_currencies`
+  ADD CONSTRAINT `richness_countries_currencies_country_id_foreign` FOREIGN KEY (`country_id`) REFERENCES `richness_countries` (`id`),
+  ADD CONSTRAINT `richness_countries_currencies_currency_id_foreign` FOREIGN KEY (`currency_id`) REFERENCES `richness_currencies` (`id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
